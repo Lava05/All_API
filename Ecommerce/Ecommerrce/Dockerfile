@@ -1,8 +1,5 @@
-FROM maven:3.8.5-openjdk:17 AS build
-COPY
-Run mvn clean package -DskipTests/
-
-From openjdk:17.0.1-jdk-slim/
-COPY --from=build /target/Ecommerrce-0.0.1-SNAPSHOT.jar Ecommerce.jar
+FROM openjdk:17
+WORKDIR /app
+COPY ${JAR_FILE} app.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "Ecommerrce-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "Ecommerrce-0.0.1-SNAPSHOT.jar"]
