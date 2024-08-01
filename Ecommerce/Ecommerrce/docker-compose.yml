@@ -19,5 +19,4 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: ecommerce
-    ports:
-      - "3366:3306"
+      DATABASE_PORT: 3306
